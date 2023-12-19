@@ -28,9 +28,10 @@ import { faChevronUp } from '@fortawesome/free-solid-svg-icons';
 import { faDownload } from '@fortawesome/free-solid-svg-icons';
 import { faHouse } from '@fortawesome/free-solid-svg-icons';
 import { faCircleInfo } from '@fortawesome/free-solid-svg-icons';
+import { faCommentDots } from '@fortawesome/free-solid-svg-icons';
 
 /* add icons to the library */
-library.add(faBookOpen, faBars, faXmark, faChartLine, faUsers, faBook, faList, faUsersGear, faFeather, faMagnifyingGlass, faPenToSquare, faTrash, faAngleDown, faChevronUp, faDownload, faHouse, faCircleInfo )
+library.add(faBookOpen, faBars, faXmark, faChartLine, faUsers, faBook, faList, faUsersGear, faFeather, faMagnifyingGlass, faPenToSquare, faTrash, faAngleDown, faChevronUp, faDownload, faHouse, faCircleInfo, faCommentDots )
 
 createApp(App)
 .use(router)

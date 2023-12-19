@@ -73,7 +73,12 @@
                     </div>
                 </div>
             </div>
-        </div>
+
+            <font-awesome-icon icon="fa-solid fa-comment-dots" @click="showBookRequest"
+            class="text-3xl fixed bottom-5 right-5 text-gray-600 cursor-pointer hover:text-gray-700 focus:text-red-900"/>
+
+            <BookRequest />
+        </div>  
     </div>
 </template>
 
@@ -81,16 +86,21 @@
     import Navbar from '../components/front/Navbar.vue';
     import Sidebar from '../components/front/Sidebar.vue';
     import BookCard from '../components/front/BookCard.vue';
+    import BookRequest from '../components/front/BookRequest.vue';
     import debounce from '../composables/debounce';
     import { useBookStore } from '../store/BookStore';
     import { useAuthStore } from '../store/AuthStore';
+    import { useToggleStore } from '../store/ToggleStore';
     import { storeToRefs } from 'pinia';
     import { onMounted, ref } from 'vue';
     import { useRouter } from "vue-router";
 
     const bookStore = useBookStore();
     const authStore = useAuthStore();
+    const toggleStore = useToggleStore();
+    // const isBookRequestOpen = ref(true);
     const { getBooks, getMostDownloadBooks, getSearchBooks } = storeToRefs(bookStore);
+    const { isBookRequestOpen } = storeToRefs(toggleStore);
 
     onMounted(() => {
         bookStore.getBook();
@@ -98,6 +108,7 @@
     })
 
     const searchBox = ref('');
+    
 
     const search = debounce.debounce(e => {
         const value = e.target.value;
@@ -111,11 +122,18 @@
     const router = useRouter();
 
     const searchResultBook = (book_id, author_id) => {
-        console.log('helo click')
+        // console.log('helo click')
         router.push({name: 'book-detail', params: {id: book_id, author_id: author_id}})
+    }
+
+    const showBookRequest = () => {
+        toggleStore.toggleBookRequest();
     }
 
 </script>
 
 <style scoped>
+
+    
+
 </style>

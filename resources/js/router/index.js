@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from "vue-router";
 import Login from '../components/Login.vue';
+import NotFoundPage from '../components/front/NotFoundPage.vue';
 import Home from '../front/Home.vue';
 import FrontBook from '../front/Book.vue';
 import Authors from '../front/Authors.vue';
@@ -125,6 +126,10 @@ const routes = [
         name: 'user',
         component: User,
         meta: { requiresAuth: true }
+    },
+    {
+        path: '/:catchAll(.*)',
+        component: NotFoundPage
     }
 ];
 

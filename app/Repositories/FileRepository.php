@@ -21,6 +21,7 @@ class FileRepository implements FileRepositoryInterface {
         if($request->search){
             $files->where('name', 'like', '%'. $request->search .'%');
         }
+        
         if($request->author_id){
             $files->where('author_id', $request->author_id);
         }
@@ -28,6 +29,13 @@ class FileRepository implements FileRepositoryInterface {
         $books = $files->paginate(8);
 
         return FileResource::collection($books);
+    }
+
+    public function booksOfAuthor($authorId)
+    {
+        $files = $this->model->with('author')->whereAuthorId($authorId)->orderBy('created_at', 'desc')->get();
+
+        return FileResource::collection($files);
     }
 
     // public function scrollBook($request)

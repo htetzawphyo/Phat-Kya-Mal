@@ -14,7 +14,7 @@
             </div>
             <div v-if="getBooks"
             class="border-2 rounded-md border-gray-900 my-5">
-                <h3 class="p-2 mb-3 text-xl font-semibold text-gray-900">{{ getAuthors.name }} Books</h3>
+                <h3 class="p-2 mb-3 text-xl font-semibold text-gray-900">{{ getAuthors.name }} ၏ စာအုပ်များ</h3>
                 
                 <div class="m-3">
                     <div class="flex gap-3 overflow-x-auto" >
@@ -32,7 +32,7 @@
     import Navbar from '../components/front/Navbar.vue';
     import Sidebar from '../components/front/Sidebar.vue';
     import BookCard from '../components/front/BookCard.vue';
-    import { computed, defineProps, ref } from 'vue';
+    import { computed, defineProps, onUnmounted, ref } from 'vue';
     import { useBookStore } from '../store/BookStore';
     import { useAuthorStore } from '../store/AuthorStore';
     import { storeToRefs } from 'pinia';
@@ -43,7 +43,12 @@
     const { getAuthors } = storeToRefs(authorStore);
 
     const bookStore = useBookStore();
-    bookStore.detailBook(props.id)
+    bookStore.booksOfAuthor(props.id)
+
+    onUnmounted(() => {
+        // to remove mounted book data
+        bookStore.books = '';
+    })
 
     const { getBooks } = storeToRefs(bookStore);
 </script>

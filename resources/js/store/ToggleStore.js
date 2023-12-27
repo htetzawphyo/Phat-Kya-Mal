@@ -7,7 +7,7 @@ export const useToggleStore = defineStore('toggleStore', () => {
 
     // ACTIONS
     const toggleBookRequest = () => {
-        isBookRequestOpen.value = !isBookRequestOpen.value;
+        isBookRequestOpen.value = !isBookRequestOpen.value; 
     }
 
     return {isBookRequestOpen, toggleBookRequest};

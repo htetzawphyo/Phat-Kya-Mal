@@ -61,6 +61,8 @@
             const status = response.data.status;
             if(status == 200){
                 toggleStore.toggleBookRequest();
+                authorName.value = '';
+                bookName.value = '';
             }
         })
         .catch( error => {

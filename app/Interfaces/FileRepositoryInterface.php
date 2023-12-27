@@ -7,6 +7,8 @@ interface FileRepositoryInterface
     public function index($request);
 
     // public function scrollBook($request);
+
+    public function booksOfAuthor($authorId);
     
     public function upload(array $data);
 

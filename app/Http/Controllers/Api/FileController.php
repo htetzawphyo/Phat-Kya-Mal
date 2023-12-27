@@ -33,6 +33,17 @@ class FileController extends Controller
         }
     }
 
+    public function booksOfAuthor($authorId)
+    {
+        try{
+            $files = $this->fileRepository->booksOfAuthor($authorId);
+            
+            return ResponseHelper::success($files);
+        }catch(Exception $e){
+            return ResponseHelper::serverError([], $e->getMessage());
+        }
+    }
+
     public function mostDownloadedBooks()
     {
         try{

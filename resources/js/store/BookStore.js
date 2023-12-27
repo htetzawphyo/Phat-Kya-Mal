@@ -146,6 +146,15 @@ export const useBookStore = defineStore('bookStore', () => {
         })
     }
 
+    const booksOfAuthor = (author_id) => {
+        axios.get(`/api/files/author-book/${author_id}`)
+        .then( response => {
+            if(response.data.status == 200){
+                books.value = response.data;
+            }
+        })
+    }
+
     const updateBook = (id, formData) => {
         axios.post(`/api/files/${id}`, formData, {
             headers: {
@@ -206,5 +215,5 @@ export const useBookStore = defineStore('bookStore', () => {
         })
     }
 
-    return { mainBook, referBook, books, getBooks, getErrMsg, getScrollBook, getSearchBooks, mainSearch, getBook, scrollBook, mostDownloadBook, addBook, editBook, updateBook, download, detailBook, deleteBook, getMeta, getIndex, getMainBook, getReferBook, getMostDownloadBooks }
+    return { mainBook, referBook, books, getBooks, getErrMsg, getScrollBook, getSearchBooks, booksOfAuthor, mainSearch, getBook, scrollBook, mostDownloadBook, addBook, editBook, updateBook, download, detailBook, deleteBook, getMeta, getIndex, getMainBook, getReferBook, getMostDownloadBooks }
 })

@@ -28,6 +28,7 @@ Route::controller(FileController::class)->group(function() {
     Route::get('/files', 'index');
     // Route::get('/files/scroll_book', 'scrollBook');
     Route::get('/files/most_download_books', 'mostDownloadedBooks');
+    Route::get('/files/author-book/{authorId}', 'booksOfAuthor');
     Route::get('/files/{file}', 'show');
     Route::get('/files/download/{file}', 'download');
 });

@@ -1,7 +1,7 @@
 <template>
     <Navbar />
     <Sidebar />
-    <div class="pt-16">
+    <div class="pt-16 flex justify-center">
         <div class="container p-3">
             <div class="flex justify-center my-6 max-sm:my-4">
                 <a href="https://flowbite.com" class="flex items-center ">

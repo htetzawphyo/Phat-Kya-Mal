@@ -90,7 +90,6 @@ class FileRepository implements FileRepositoryInterface {
         
         // Read the file contents
         $fileContents = file_get_contents($filePath);
-        // return response($fileContents)->header('Content-Type', 'application/pdf');
 
         // Increment download count
         $file->downloadStatistic->download_count++;

@@ -16,7 +16,7 @@ class FileResource extends JsonResource
             'name' => $this->name,
             'about' => $this->about,
             'author_name' => optional($this->author)->name ?? 'Unknown author',
-            'file' => $this->file ? asset('storage/file/' . $this->file) : null,
+            'file' => $this->file ? Storage::disk('s3')->url('file/' . $this->file) : null,
             // 'image' => $this->image ? asset('storage/image/' . $this->image) : null,
             'image' => $this->image ? Storage::disk('s3')->url('image/' . $this->image) : null,
             'download_count' => $this->downloadStatistic->download_count

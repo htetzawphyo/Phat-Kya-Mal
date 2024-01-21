@@ -7,7 +7,7 @@ use App\Helper\UploadHelper;
 use App\Interfaces\AuthorRepositoryInterface;
 use App\Http\Resources\Author\AuthorsResource;
 use App\Http\Resources\Author\AuthorDetailResource;
-
+ 
 class AuthorRepository implements AuthorRepositoryInterface {
     protected $model;
 

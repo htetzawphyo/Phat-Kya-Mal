@@ -6,6 +6,7 @@ use App\Models\File;
 use App\Helper\UploadHelper;
 use App\Http\Resources\File\FileResource;
 use App\Interfaces\FileRepositoryInterface;
+use Illuminate\Support\Facades\Storage;
 
 class FileRepository implements FileRepositoryInterface {
     protected $model;
@@ -86,7 +87,8 @@ class FileRepository implements FileRepositoryInterface {
 
     public function download($file)
     {
-        $filePath = storage_path('app/public/file/' . $file->file);
+        // $filePath = storage_path('app/public/file/' . $file->file);
+        $filePath = Storage::disk('s3')->url('file/' . $file->file);
         
         // Read the file contents
         $fileContents = file_get_contents($filePath);

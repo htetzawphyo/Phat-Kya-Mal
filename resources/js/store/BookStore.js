@@ -55,7 +55,7 @@ export const useBookStore = defineStore('bookStore', () => {
     const getBook = (search='', page=1) => {
         axios.get(`/api/files?search=${search}&page=${page}`)
         .then( response => {
-            console.log(response)
+            // console.log(response)
             let resBooks = response.data
 			books.value = resBooks
             metas.value = response.data.meta
@@ -185,7 +185,7 @@ export const useBookStore = defineStore('bookStore', () => {
             'responseType': 'blob'
         })
         .then( response => {
-            // console.log(response)
+            console.log(response)
 
             const fileURL = window.URL.createObjectURL(new Blob([response.data], {type: 'application/pdf'}));
             // window.open(fileURL, '_blank'); // Open in a new tab or window

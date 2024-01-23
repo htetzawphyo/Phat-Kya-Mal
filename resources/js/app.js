@@ -3,6 +3,7 @@ import { createApp } from 'vue';
 import App from './App.vue';
 import router from './router';
 import { createPinia } from 'pinia';
+import VueProgressBar from "@aacassandra/vue3-progressbar";
 
 /* import the fontawesome core */
 import { library } from '@fortawesome/fontawesome-svg-core'
@@ -33,8 +34,24 @@ import { faCommentDots } from '@fortawesome/free-solid-svg-icons';
 /* add icons to the library */
 library.add(faBookOpen, faBars, faXmark, faChartLine, faUsers, faBook, faList, faUsersGear, faFeather, faMagnifyingGlass, faPenToSquare, faTrash, faAngleDown, faChevronUp, faDownload, faHouse, faCircleInfo, faCommentDots )
 
+const options = {
+    color: "#0d6efd",
+    // failedColor: "#874b4b",
+    failedColor: "red",
+    thickness: "5px",
+    transition: {
+        speed: "0.2s",
+        opacity: "0.6s",
+        termination: 300,
+    },
+    autoRevert: true,
+    location: "top",
+    inverse: false,
+};
+
 createApp(App)
 .use(router)
 .use(createPinia())
+.use(VueProgressBar, options)
 .component('font-awesome-icon', FontAwesomeIcon)
 .mount("#app")

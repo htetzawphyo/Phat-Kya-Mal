@@ -2,9 +2,13 @@ import axios from "axios";
 import { defineStore } from "pinia";
 import { ref, computed } from "vue";
 import { useRouter } from "vue-router";
+import { getCurrentInstance } from "vue";
 import cookie from '../composables/cookie.js';
 
 export const useAuthorStore = defineStore('authorStore', () => {
+    // vue progress
+	const internalInstance = getCurrentInstance();
+
     // TOKEN
     const token = cookie.getCookie('accessToken');
 
@@ -33,6 +37,7 @@ export const useAuthorStore = defineStore('authorStore', () => {
 
     // ACTIONS
     const getAuthor = (search='',page=1) => {
+        // internalInstance.appContext.config.globalProperties.$Progress.start();
         axios.get(`/api/authors?search=${search}&page=${page}`)
         .then( response => {
             let resAuthors = response.data
@@ -43,9 +48,13 @@ export const useAuthorStore = defineStore('authorStore', () => {
         .catch( error => {
 			console.log(error)
 		})
+        // .finally( () => {
+		// 	internalInstance.appContext.config.globalProperties.$Progress.finish();
+		// })
     }
 
     const addAuthor = (author) => {
+        internalInstance.appContext.config.globalProperties.$Progress.start();
 		axios.post(`/api/authors`, author,{
 			headers: {
                 'Accept': 'application/json',
@@ -61,6 +70,9 @@ export const useAuthorStore = defineStore('authorStore', () => {
             // console.log(err.response.data.errors)
 			errMsg.value = err.response.data.errors;
 		})
+        .finally( () => {
+			internalInstance.appContext.config.globalProperties.$Progress.finish();
+		})
 	}
 
     const editAuthor = (id) => {
@@ -72,6 +84,7 @@ export const useAuthorStore = defineStore('authorStore', () => {
     }
 
     const updateAuthor = (id, formData) => {
+        internalInstance.appContext.config.globalProperties.$Progress.start();
         axios.post(`/api/authors/${id}`, formData, {
             headers: {
                 'Accept': 'application/json',
@@ -87,10 +100,14 @@ export const useAuthorStore = defineStore('authorStore', () => {
             if(error.response.data.errors){
                 errMsg.value = error.response.data.errors;
             }
-		});
+		})
+        .finally( () => {
+			internalInstance.appContext.config.globalProperties.$Progress.finish();
+		})
     }
 
     const deleteAuthor = (id) => {
+        internalInstance.appContext.config.globalProperties.$Progress.start();
         axios.delete(`/api/authors/${id}`, {
             headers: {
                 'Accept': 'application/json',
@@ -105,6 +122,9 @@ export const useAuthorStore = defineStore('authorStore', () => {
         .catch( err => {
             console.log(err)
         })
+        .finally( () => {
+			internalInstance.appContext.config.globalProperties.$Progress.finish();
+		})
     }
 
     return { authors, getAuthors, getErrMsg, getMeta, getIndex, getAuthor, addAuthor, editAuthor, updateAuthor, deleteAuthor }

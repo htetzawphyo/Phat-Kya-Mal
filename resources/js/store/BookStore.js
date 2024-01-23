@@ -2,9 +2,13 @@ import axios from "axios";
 import { defineStore } from "pinia";
 import { ref, computed } from "vue";
 import { useRouter } from "vue-router";
+import { getCurrentInstance } from "vue";
 import cookie from '../composables/cookie.js';
 
 export const useBookStore = defineStore('bookStore', () => {
+    // vue progress
+	const internalInstance = getCurrentInstance();
+
     // TOKEN
     const token = cookie.getCookie('accessToken');
 
@@ -108,6 +112,7 @@ export const useBookStore = defineStore('bookStore', () => {
     }
 
     const addBook = (book) => {
+        internalInstance.appContext.config.globalProperties.$Progress.start();
         axios.post(`/api/files`, book,{
 			headers: {
                 'Accept': 'application/json',
@@ -123,6 +128,9 @@ export const useBookStore = defineStore('bookStore', () => {
             if(err.response){
                 errMsg.value = err.response.data.errors;
             }
+		})
+        .finally( () => {
+			internalInstance.appContext.config.globalProperties.$Progress.finish();
 		})
     }
 
@@ -156,6 +164,7 @@ export const useBookStore = defineStore('bookStore', () => {
     }
 
     const updateBook = (id, formData) => {
+        internalInstance.appContext.config.globalProperties.$Progress.start();
         axios.post(`/api/files/${id}`, formData, {
             headers: {
                 'Accept': 'application/json',
@@ -174,7 +183,10 @@ export const useBookStore = defineStore('bookStore', () => {
                 console.log(error.response.data.errors);
                 errMsg.value = error.response.data.errors;
             }
-		});
+		})
+        .finally( () => {
+			internalInstance.appContext.config.globalProperties.$Progress.finish();
+		})
     }
 
     const download = (id, name) => {
@@ -199,6 +211,7 @@ export const useBookStore = defineStore('bookStore', () => {
     }
 
     const deleteBook = (id) => {
+        internalInstance.appContext.config.globalProperties.$Progress.start();
         axios.delete(`/api/files/${id}`, {
             headers: {
                 'Accept': 'application/json',
@@ -213,6 +226,9 @@ export const useBookStore = defineStore('bookStore', () => {
         .catch( err => {
             console.log(err)
         })
+        .finally( () => {
+			internalInstance.appContext.config.globalProperties.$Progress.finish();
+		})
     }
 
     return { mainBook, referBook, books, getBooks, getErrMsg, getScrollBook, getSearchBooks, booksOfAuthor, mainSearch, getBook, scrollBook, mostDownloadBook, addBook, editBook, updateBook, download, detailBook, deleteBook, getMeta, getIndex, getMainBook, getReferBook, getMostDownloadBooks }

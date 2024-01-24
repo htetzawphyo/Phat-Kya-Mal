@@ -21,10 +21,10 @@
                     {{ count }}
                 </span>
             </div>
-            <div @click="downloadPdf(book.id, book.name)" class=" w-full hover:cursor-pointer inline-flex items-center px-2 py-1 text-sm font-medium text-center text-white bg-yellow-600 rounded-md hover:bg-yellow-800 focus:ring-4 focus:outline-none focus:ring-yellow-300 dark:bg-yellow-600 dark:hover:bg-yellow-700 dark:focus:ring-yellow-800">
+            <button type="button" @click="downloadPdf(book.id, book.name)" :disabled="isDownload" class=" w-full hover:cursor-pointer inline-flex items-center px-2 py-1 text-sm font-medium text-center text-white bg-yellow-600 rounded-md hover:bg-yellow-700 ">
                 <span class="overflow-hidden">Download</span>
                 <font-awesome-icon icon="fa-solid fa-download" class=" w-3.5 h-3.5 ms-2"/>
-            </div>
+            </button>
             <router-link :to="{name: 'book-detail', params: {id: book.id, author_id: book.author_id} }"
             class="w-full hover:cursor-pointer inline-flex items-center px-2 py-1 text-sm font-medium text-center text-white bg-blue-500 rounded-md hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-500 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
                 <span class="overflow-hidden">View more</span>
@@ -38,11 +38,14 @@
 <script setup>
     import { defineProps } from 'vue';
     import { useBookStore } from '../../store/BookStore';
+    import { storeToRefs } from 'pinia';
 
     const props = defineProps(['book', 'count']);
     const bookStore = useBookStore();
+    const { isDownload } = storeToRefs(bookStore);
 
     const downloadPdf = (id, name) => {
+        bookStore.isDownload = true;
         bookStore.download(id, name);
     }
 </script>

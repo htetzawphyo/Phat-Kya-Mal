@@ -92,7 +92,7 @@
     import { useAuthStore } from '../store/AuthStore';
     import { useToggleStore } from '../store/ToggleStore';
     import { storeToRefs } from 'pinia';
-    import { onMounted, ref } from 'vue';
+    import { onMounted, ref, onUnmounted } from 'vue';
     import { useRouter } from "vue-router";
 
     const bookStore = useBookStore();
@@ -105,6 +105,10 @@
     onMounted(() => {
         bookStore.getBook();
         bookStore.mostDownloadBook();
+    })
+
+    onUnmounted(() => {
+        bookStore.books = '';
     })
 
     const searchBox = ref('');

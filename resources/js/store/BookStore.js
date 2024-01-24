@@ -24,6 +24,7 @@ export const useBookStore = defineStore('bookStore', () => {
     const referBook = ref(null);
     const scrollBooks = ref([]);
     const searchBooks = ref();
+    const isDownload = ref(false);
 
     // GETTER
     const getBooks = computed( () => {
@@ -198,7 +199,7 @@ export const useBookStore = defineStore('bookStore', () => {
         })
         .then( response => {
             console.log(response)
-
+            
             const fileURL = window.URL.createObjectURL(new Blob([response.data], {type: 'application/pdf'}));
             // window.open(fileURL, '_blank'); // Open in a new tab or window
             const fileLink = document.createElement('a');
@@ -208,6 +209,9 @@ export const useBookStore = defineStore('bookStore', () => {
             document.body.appendChild(fileLink);
             fileLink.click();
         })
+        .finally( () => {
+			isDownload.value = false;
+		})
     }
 
     const deleteBook = (id) => {
@@ -231,5 +235,5 @@ export const useBookStore = defineStore('bookStore', () => {
 		})
     }
 
-    return { mainBook, referBook, books, getBooks, getErrMsg, getScrollBook, getSearchBooks, booksOfAuthor, mainSearch, getBook, scrollBook, mostDownloadBook, addBook, editBook, updateBook, download, detailBook, deleteBook, getMeta, getIndex, getMainBook, getReferBook, getMostDownloadBooks }
+    return { isDownload, mainBook, referBook, books, getBooks, getErrMsg, getScrollBook, getSearchBooks, booksOfAuthor, mainSearch, getBook, scrollBook, mostDownloadBook, addBook, editBook, updateBook, download, detailBook, deleteBook, getMeta, getIndex, getMainBook, getReferBook, getMostDownloadBooks }
 })

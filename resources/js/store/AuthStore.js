@@ -8,9 +8,6 @@ export const useAuthStore = defineStore('authStore', () => {
     // ROUTER
     const router = useRouter();
 
-    // TOKEN
-    const token = cookie.getCookie('accessToken');
-
     // STATE
     const accessToken = ref(cookie.getCookie('accessToken') || null);
     const authorizeUser = ref([]);
@@ -29,6 +26,7 @@ export const useAuthStore = defineStore('authStore', () => {
             }
         })
         .then(response => {
+            console.log(response)
             let isToken = response.data.token
             if(isToken){
                 accessToken.value = isToken;
@@ -46,18 +44,14 @@ export const useAuthStore = defineStore('authStore', () => {
     }
 
     const logout = () => {
-        console.log(token);
-        axios.post('/api/logout' , {
+        axios.post('/api/logout', {
             headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'multipart/form-data',
-                'Authorization': `Bearer ${token}`
-            }
-        })
+                'Accept': 'application/json'
+			}
+		})
         .then( response => {
             console.log(response)
             if(response.status == 200){
-                // accessToken.value = null;
                 cookie.deleteCookie('accessToken');
                 router.push({name: 'home'})
             }

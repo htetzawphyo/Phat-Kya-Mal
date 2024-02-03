@@ -11,7 +11,4 @@ export default defineConfig({
             refresh: true,
         }),
     ],
-    server: {
-        origin: 'https://phatkyamal.com',
-    }
 });

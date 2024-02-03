@@ -20,10 +20,10 @@
                 class="hover:scale-105 transition duration-100 hover:text-sky-400 text-gray-500 dark:text-white mx-3 font-sans">
                     Authors
                 </router-link>
-                <router-link :to="{name: 'about'}"
+                <!-- <router-link :to="{name: 'about'}"
                 class="hover:scale-105 transition duration-100 hover:text-sky-400 text-gray-500 dark:text-white mx-3 font-sans">
                     About
-                </router-link>
+                </router-link> -->
             </div>
             <div class="flex items-center">
                 <!-- <a href="#" class="max-md:text-lg max-sm:hidden hover:scale-105 transition duration-100 hover:text-sky-400 text-blue-600 dark:text-blue-500 hover:underline">Login</a> -->

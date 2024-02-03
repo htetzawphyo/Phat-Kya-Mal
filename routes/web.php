@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use Illuminate\Support\Facades\URL;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,9 +16,6 @@ use Illuminate\Support\Facades\URL;
 // Route::get('/{slug?}', function () {
 //     return view('welcome');
 // });
-if (env('APP_ENV') === 'production') {
-    URL::forceSchema('https');
-}
 
 Route::get('/{any}', function () {
     return view('index');

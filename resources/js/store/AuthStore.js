@@ -8,6 +8,9 @@ export const useAuthStore = defineStore('authStore', () => {
     // ROUTER
     const router = useRouter();
 
+    // TOKEN
+    const token = cookie.getCookie('accessToken');
+
     // STATE
     const accessToken = ref(cookie.getCookie('accessToken') || null);
     const authorizeUser = ref([]);
@@ -30,6 +33,7 @@ export const useAuthStore = defineStore('authStore', () => {
             if(isToken){
                 accessToken.value = isToken;
                 cookie.setCookie('accessToken', isToken);
+                console.log(isToken);
                 authorizeUser.value = response.data.data;
                 router.push({name: 'admin'});
             }else{
@@ -42,15 +46,18 @@ export const useAuthStore = defineStore('authStore', () => {
     }
 
     const logout = () => {
+        console.log(token);
         axios.post('/api/logout' , {
             headers: {
-                'Content-Type': 'multipart/form-data'
+                'Accept': 'application/json',
+                'Content-Type': 'multipart/form-data',
+                'Authorization': `Bearer ${token}`
             }
         })
         .then( response => {
             console.log(response)
             if(response.status == 200){
-                accessToken.value = null;
+                // accessToken.value = null;
                 cookie.deleteCookie('accessToken');
                 router.push({name: 'home'})
             }

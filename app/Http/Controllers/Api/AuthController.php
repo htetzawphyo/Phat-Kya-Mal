@@ -60,11 +60,15 @@ class AuthController extends Controller
 
     public function logout(Request $request)
     {
-        $user = $request->user();
-        $user->tokens()->delete();
-        return response()->json([
-            'message' => 'Logout successfully.',
-            'status' => 200
-        ]);
+        try{
+            $user = $request->user();
+            $user->tokens()->delete();
+            return response()->json([
+                'message' => 'Logout successfully.',
+                'status' => 200
+            ]);
+        }catch (Exception $e){
+            return response()->json($e->getMessage(),Response::HTTP_INTERNAL_SERVER_ERROR);
+        }
     }
 }

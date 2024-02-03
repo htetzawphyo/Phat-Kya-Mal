@@ -26,12 +26,10 @@ export const useAuthStore = defineStore('authStore', () => {
             }
         })
         .then(response => {
-            console.log(response)
             let isToken = response.data.token
             if(isToken){
                 accessToken.value = isToken;
                 cookie.setCookie('accessToken', isToken);
-                console.log(isToken);
                 authorizeUser.value = response.data.data;
                 router.push({name: 'admin'});
             }else{
@@ -50,7 +48,6 @@ export const useAuthStore = defineStore('authStore', () => {
 			}
 		})
         .then( response => {
-            console.log(response)
             if(response.status == 200){
                 cookie.deleteCookie('accessToken');
                 router.push({name: 'home'})

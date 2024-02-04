@@ -84,14 +84,14 @@
     }
 
     const handleBook = () => {
-        const book = {
-            name: name.value,
-            about: about.value,
-            author_id: authorId.value, 
-            file: pdf.value ? pdf.value : null,
-            image: image.value ? image.value : null
-        }
-        // console.log(book)
-        bookStore.addBook(book);
+        const formData = new FormData();
+        formData.append("_method", 'post');
+        formData.append("name", name.value);
+        formData.append("about", about.value);
+        formData.append("author_id", authorId.value);
+        formData.append("file", pdf.value ? pdf.value : null);
+        formData.append("image", image.value ? image.value : null);
+
+        bookStore.addBook(formData);
     }
 </script>

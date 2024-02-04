@@ -126,6 +126,7 @@ export const useBookStore = defineStore('bookStore', () => {
 			router.push({ name: 'book'})
 		})
 		.catch( err => {
+            console.log(err)
             if(err.response){
                 errMsg.value = err.response.data.errors;
             }

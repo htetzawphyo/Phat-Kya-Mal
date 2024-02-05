@@ -23,7 +23,7 @@ class FileUploadRequest extends FormRequest
     {
         return [
             'name' => 'required',
-            'file' => 'required|mimes:pdf|max:5000'
+            'file' => 'required|mimes:pdf|max:10240'
         ];
     }
 

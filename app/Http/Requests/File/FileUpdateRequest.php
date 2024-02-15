@@ -23,7 +23,7 @@ class FileUpdateRequest extends FormRequest
     {
         return [
             'name' => 'required',
-            'file' => 'required|mimes:pdf|max:5000'
+            'file' => 'required|mimes:pdf|max:10240'
         ];
     }
 
@@ -32,6 +32,7 @@ class FileUpdateRequest extends FormRequest
         return [
             'file.required' => 'File is require.',
             'file.mimes' => 'File must be a PDF.',
+            'file.max' => 'File should not be 10mb over.',
             'name.required' => 'The book name is require.'
         ];
     }

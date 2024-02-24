@@ -1,0 +1,82 @@
+  2024-02-05 08:18:03 App\Jobs\BookRequestNoti ....................... RUNNING
+  2024-02-05 08:18:04 App\Jobs\BookRequestNoti ................. 787.51ms DONE
+  2024-02-05 09:54:42 App\Jobs\BookRequestNoti ....................... RUNNING
+  2024-02-05 09:54:42 App\Jobs\BookRequestNoti ................. 840.49ms DONE
+  2024-02-05 12:49:42 App\Jobs\BookRequestNoti ....................... RUNNING
+  2024-02-05 12:49:43 App\Jobs\BookRequestNoti ................. 466.58ms DONE
+  2024-02-05 13:11:18 App\Jobs\BookRequestNoti ....................... RUNNING
+  2024-02-05 13:11:18 App\Jobs\BookRequestNoti ................. 537.76ms DONE
+  2024-02-05 13:11:49 App\Jobs\BookRequestNoti ....................... RUNNING
+  2024-02-05 13:11:49 App\Jobs\BookRequestNoti ................. 424.35ms DONE
+  2024-02-05 13:12:28 App\Jobs\BookRequestNoti ....................... RUNNING
+  2024-02-05 13:12:29 App\Jobs\BookRequestNoti ................. 429.50ms DONE
+  2024-02-05 13:13:08 App\Jobs\BookRequestNoti ....................... RUNNING
+  2024-02-05 13:13:09 App\Jobs\BookRequestNoti ................. 422.71ms DONE
+  2024-02-05 13:14:03 App\Jobs\BookRequestNoti ....................... RUNNING
+  2024-02-05 13:14:04 App\Jobs\BookRequestNoti ................. 634.82ms DONE
+  2024-02-05 13:14:44 App\Jobs\BookRequestNoti ....................... RUNNING
+  2024-02-05 13:14:44 App\Jobs\BookRequestNoti ................. 483.15ms DONE
+  2024-02-05 13:16:31 App\Jobs\BookRequestNoti ....................... RUNNING
+  2024-02-05 13:16:32 App\Jobs\BookRequestNoti ................. 523.82ms DONE
+  2024-02-05 13:17:38 App\Jobs\BookRequestNoti ....................... RUNNING
+  2024-02-05 13:17:38 App\Jobs\BookRequestNoti ................. 411.79ms DONE
+  2024-02-05 13:18:12 App\Jobs\BookRequestNoti ....................... RUNNING
+  2024-02-05 13:18:12 App\Jobs\BookRequestNoti ................. 515.23ms DONE
+  2024-02-05 13:19:05 App\Jobs\BookRequestNoti ....................... RUNNING
+  2024-02-05 13:19:05 App\Jobs\BookRequestNoti ................. 409.94ms DONE
+  2024-02-05 13:20:28 App\Jobs\BookRequestNoti ....................... RUNNING
+  2024-02-05 13:20:28 App\Jobs\BookRequestNoti ................. 502.83ms DONE
+  2024-02-05 13:22:03 App\Jobs\BookRequestNoti ....................... RUNNING
+  2024-02-05 13:22:03 App\Jobs\BookRequestNoti ................. 498.28ms DONE
+  2024-02-05 13:22:38 App\Jobs\BookRequestNoti ....................... RUNNING
+  2024-02-05 13:22:39 App\Jobs\BookRequestNoti ................. 635.93ms DONE
+  2024-02-05 13:27:30 App\Jobs\BookRequestNoti ....................... RUNNING
+  2024-02-05 13:27:31 App\Jobs\BookRequestNoti ................. 425.31ms DONE
+  2024-02-05 13:29:40 App\Jobs\BookRequestNoti ....................... RUNNING
+  2024-02-05 13:29:41 App\Jobs\BookRequestNoti ................. 450.49ms DONE
+  2024-02-05 13:33:16 App\Jobs\BookRequestNoti ....................... RUNNING
+  2024-02-05 13:33:16 App\Jobs\BookRequestNoti ................. 396.84ms DONE
+  2024-02-05 13:34:25 App\Jobs\BookRequestNoti ....................... RUNNING
+  2024-02-05 13:34:25 App\Jobs\BookRequestNoti ................. 497.44ms DONE
+  2024-02-05 13:35:03 App\Jobs\BookRequestNoti ....................... RUNNING
+  2024-02-05 13:35:04 App\Jobs\BookRequestNoti ................. 886.35ms DONE
+  2024-02-05 13:35:57 App\Jobs\BookRequestNoti ....................... RUNNING
+  2024-02-05 13:35:57 App\Jobs\BookRequestNoti ................. 498.84ms DONE
+  2024-02-05 13:36:43 App\Jobs\BookRequestNoti ....................... RUNNING
+  2024-02-05 13:36:44 App\Jobs\BookRequestNoti ................. 760.64ms DONE
+  2024-02-05 13:37:39 App\Jobs\BookRequestNoti ....................... RUNNING
+  2024-02-05 13:37:39 App\Jobs\BookRequestNoti ................. 456.43ms DONE
+  2024-02-05 13:38:10 App\Jobs\BookRequestNoti ....................... RUNNING
+  2024-02-05 13:38:10 App\Jobs\BookRequestNoti ................. 421.56ms DONE
+  2024-02-05 13:42:06 App\Jobs\BookRequestNoti ....................... RUNNING
+  2024-02-05 13:42:06 App\Jobs\BookRequestNoti ................. 427.13ms DONE
+  2024-02-05 13:42:49 App\Jobs\BookRequestNoti ....................... RUNNING
+  2024-02-05 13:42:49 App\Jobs\BookRequestNoti ................. 561.45ms DONE
+  2024-02-05 13:43:26 App\Jobs\BookRequestNoti ....................... RUNNING
+  2024-02-05 13:43:26 App\Jobs\BookRequestNoti ................. 434.42ms DONE
+  2024-02-05 13:45:03 App\Jobs\BookRequestNoti ....................... RUNNING
+  2024-02-05 13:45:04 App\Jobs\BookRequestNoti ................. 640.12ms DONE
+  2024-02-05 13:45:59 App\Jobs\BookRequestNoti ....................... RUNNING
+  2024-02-05 13:45:59 App\Jobs\BookRequestNoti ................. 458.48ms DONE
+  2024-02-05 13:46:42 App\Jobs\BookRequestNoti ....................... RUNNING
+  2024-02-05 13:46:42 App\Jobs\BookRequestNoti ................. 419.67ms DONE
+  2024-02-05 13:47:03 App\Jobs\BookRequestNoti ....................... RUNNING
+  2024-02-05 13:47:04 App\Jobs\BookRequestNoti ................. 773.69ms DONE
+  2024-02-05 15:38:46 App\Jobs\BookRequestNoti ....................... RUNNING
+  2024-02-05 15:38:47 App\Jobs\BookRequestNoti ................. 446.33ms DONE
+  2024-02-07 13:00:29 App\Jobs\BookRequestNoti ....................... RUNNING
+  2024-02-07 13:00:29 App\Jobs\BookRequestNoti ................. 685.91ms DONE
+  2024-02-08 04:41:55 App\Jobs\BookRequestNoti ....................... RUNNING
+  2024-02-08 04:41:56 App\Jobs\BookRequestNoti ................. 719.91ms DONE
+  2024-02-08 04:42:50 App\Jobs\BookRequestNoti ....................... RUNNING
+  2024-02-08 04:42:51 App\Jobs\BookRequestNoti ................. 445.94ms DONE
+  2024-02-08 04:44:22 App\Jobs\BookRequestNoti ....................... RUNNING
+  2024-02-08 04:44:23 App\Jobs\BookRequestNoti ................. 436.29ms DONE
+  2024-02-08 04:46:58 App\Jobs\BookRequestNoti ....................... RUNNING
+  2024-02-08 04:46:59 App\Jobs\BookRequestNoti ................. 582.29ms DONE
+  2024-02-08 04:49:01 App\Jobs\BookRequestNoti ....................... RUNNING
+  2024-02-08 04:49:01 App\Jobs\BookRequestNoti ................. 771.64ms DONE
+  2024-02-10 10:22:21 App\Jobs\BookRequestNoti ....................... RUNNING
+  2024-02-10 10:22:21 App\Jobs\BookRequestNoti ................. 551.13ms DONE
+  2024-02-10 14:02:23 App\Jobs\BookRequestNoti ....................... RUNNING
+  2024-02-10 14:02:24 App\Jobs\BookRequestNoti ....................... 1s DONE

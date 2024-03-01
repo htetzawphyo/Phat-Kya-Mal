@@ -4,7 +4,7 @@
     <div class="pt-16 flex justify-center">
         <div class="container p-3">
             <div class="flex justify-center my-6 max-sm:my-4">
-                <a href="https://flowbite.com" class="flex items-center ">
+                <a href="/" class="flex items-center ">
                 <font-awesome-icon icon="fa-solid fa-book-open" class="mr-3 text-5xl max-sm:text-3xl whitespace-nowrap text-sky-700" alt="Phat Kya Mal Logo"/>
                 <span class="text-5xl max-sm:text-3xl font-semibold whitespace-nowrap text-sky-700">ဖတ်ကြမယ်</span>
                 </a>
@@ -14,20 +14,20 @@
                 <div class="relative mb-4 flex w-2/4 max-sm:w-full flex-wrap items-stretch">
                     <input
                     type="search"
-                    class="relative m-0 -mr-0.5 block min-w-0 flex-auto rounded-l border border-solid border-neutral-300 bg-transparent bg-clip-padding px-3 py-[0.25rem] text-base font-normal leading-[1.6] text-neutral-700 outline-none transition duration-200 ease-in-out focus:z-[3] focus:border-primary focus:text-neutral-700 focus:shadow-[inset_0_0_0_1px_rgb(59,113,202)] focus:outline-none dark:border-neutral-600 dark:text-neutral-700 dark:placeholder:text-gray-500 dark:focus:border-primary"
+                    class="relative m-0 -mr-0.5 block min-w-0 flex-auto rounded border border-solid border-neutral-300 bg-transparent bg-clip-padding px-3 py-[0.25rem] text-base font-normal leading-[1.6] text-neutral-700 outline-none transition duration-200 ease-in-out focus:z-[3] focus:border-primary focus:text-neutral-700 focus:shadow-[inset_0_0_0_1px_rgb(59,113,202)] focus:outline-none dark:border-neutral-600 dark:text-neutral-700 dark:placeholder:text-gray-500 dark:focus:border-primary"
                     placeholder="Search books.."
                     aria-label="Search"
                     aria-describedby="button-addon1" v-model="searchBox" v-on:keyup="search"/>
 
                     <!--Search button-->
-                    <button
+                    <!-- <button
                     class="relative z-[2] flex items-center rounded-r bg-gray-600 px-6 py-2.5 text-xs font-medium uppercase leading-tight text-white shadow-md transition duration-150 ease-in-out hover:bg-gray-700 hover:shadow-lg focus:bg-gray-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-gray-800 active:shadow-lg"
                     type="button"
                     id="button-addon1"
                     data-te-ripple-init
                     data-te-ripple-color="light">
                     <font-awesome-icon class="w-4 h-4 text-gray-500 dark:text-gray-400" icon="fa-solid fa-magnifying-glass" />
-                    </button>
+                    </button> -->
 
                     <!-- Search Results -->
                     <div v-if="getSearchBooks && searchBox" class="absolute top-full left-0 max-h-64 bg-gray-500 w-full z-20 overflow-y-scroll">

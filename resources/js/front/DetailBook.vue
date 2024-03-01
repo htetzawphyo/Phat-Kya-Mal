@@ -40,7 +40,7 @@
     import Navbar from '../components/front/Navbar.vue';
     import Sidebar from '../components/front/Sidebar.vue';
     import BookCard from '../components/front/BookCard.vue';
-    import { computed, defineProps, onMounted, ref, watch } from 'vue';
+    import { computed, defineProps, onMounted, ref, watch, onUnmounted } from 'vue';
     import { useBookStore } from '../store/BookStore';
     import { storeToRefs } from 'pinia';
     import { useRoute } from 'vue-router';
@@ -56,6 +56,11 @@
     // fetchBook();
     
     onMounted(() => fetchBook());
+
+    onUnmounted(() => {
+        bookStore.referBook = '';
+    })
+
     watch(route, () => fetchBook());
     const { getBooks, getMainBook, getReferBook } = storeToRefs(bookStore);
 

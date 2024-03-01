@@ -3,6 +3,7 @@ import laravel from 'laravel-vite-plugin';
 import vue from '@vitejs/plugin-vue';
 
 export default defineConfig({
+    base: '',
     plugins: [
         vue(),
         laravel({
@@ -10,15 +11,4 @@ export default defineConfig({
             refresh: true,
         }),
     ],
-    // build: {
-    //     rollupOptions: {
-    //         external: ['vue', 'pinia'],
-    //         output: {
-    //             globals: {
-    //                 vue: 'Vue',
-    //                 pinia: 'pinia'
-    //             }
-    //         }
-    //     }
-    // }
 });
